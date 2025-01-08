@@ -1,0 +1,80 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px; /* Tamaño base de fuente para que las unidades relativas (em/rem) sean consistentes */
+}
+
+.content {
+    flex: 1; /* Esto hace que el contenido ocupe el espacio disponible */
+}
+
+.footer {
+    position: relative;
+    display: flex;
+    gap: 2vw; /* Usamos 'vw' para el espacio entre los botones, lo hace relativo al ancho de la ventana */
+    justify-content: center;
+    padding: 3rem 0 1rem 0; /* Usamos 'rem' para los márgenes y el padding */
+    background: transparent;
+    width: 100%;
+}
+
+.footer-button {
+    text-decoration: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+    opacity: 0.8;
+    font-size: 1rem; /* Tamaño relativo para que se ajuste bien a cualquier dispositivo */
+}
+
+.footer-button:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* Ajustes generales para los íconos/logos */
+.footer-icon {
+    width: 4vw; /* Cambiado a 10% del ancho de la pantalla */
+    height: auto; /* Mantiene la proporción */
+    max-width: 80px; /* Máximo tamaño en píxeles para pantallas grandes */
+    transition: width 0.3s ease-in-out;
+  }
+  
+@media (min-width: 1200px) {
+    .footer-icon {
+      width: 6vw; /* 6% del ancho de la pantalla para pantallas grandes */
+      max-width: 50px; /* Limitación máxima para pantallas grandes */
+    }
+}
+  
+/* Media Queries para adaptarse a diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 0 1rem 0;
+    }
+
+    .footer-button {
+        font-size: 0.9rem; /* Reducir el tamaño de la fuente en pantallas más pequeñas */
+    }
+
+    .footer-icon {
+        width: 5vw; /* 8% del ancho de la pantalla en pantallas medianas */
+        max-width: 40px; /* Limitación máxima para pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 1.5rem 0 0.5rem 0;
+    }
+
+    .footer-button {
+        font-size: 0.8rem; /* Reducir aún más el tamaño de la fuente en pantallas muy pequeñas */
+    }
+
+    .footer-icon {
+        width: 8vw; /* Aumentar el tamaño del icono en pantallas muy pequeñas */
+        height: 8vw;
+    }
+}
